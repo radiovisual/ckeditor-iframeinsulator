@@ -1,0 +1,43 @@
+{
+  "name": "ckeditor-iframeinsulator",
+  "version": "0.0.1",
+  "description": "Insulate ckeditor iframes with a contextMenu-friendly div.",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radiovisual/ckeditor-iframewrapper.git"
+  },
+  "keywords": [
+    "ckeditor",
+    "contextMenu",
+    "context",
+    "menu",
+    "plugin",
+    "media",
+    "wrapper",
+    "iframeinsulator",
+    "header",
+    "div",
+    "html",
+    "wrap",
+    "widget",
+    "insulate",
+    "insulating"
+  ],
+  "author": {
+    "name": "Michael Wuergler",
+    "email": "senjudev@gmail.com",
+    "url": "http://numetriclabs.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radiovisual/ckeditor-iframeinsulator/issues"
+  },
+  "homepage": "https://github.com/radiovisual/ckeditor-iframeinsulator#readme",
+  "devDependencies": {
+    "xo": "^0.13.0"
+  }
+}

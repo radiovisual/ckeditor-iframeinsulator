@@ -1,0 +1,5 @@
+.iframe-insulator {
+    background-color: white;
+    background-image: url('stripe.png');
+    padding: 25px;
+}
