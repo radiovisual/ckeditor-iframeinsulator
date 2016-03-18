@@ -9,22 +9,25 @@ iframes that hijack the right-click (I'm looking at you, youtube) can have ckedi
 
 ## Installation
 
-- Copy the metadata plugin files to your CKEditor's plugin folder:
-    ```
-    ckeditor/plugins/
-    ```
-- Add the plugin to the CKEDITOR configuration:  
-    ```js
-    CKEDITOR.config.extraPlugins = 'iframeinsulator';
-    ```
-- Ensure that this plugin can create content:  
-    ```js
-    CKEDITOR.config.allowedContent = true;
-    ```
-- For best results, disable the default `iframe` plugin:  
-    ```js
-    CKEDITOR.config.removePlugins = 'iframe';
-    ```
+**Step 1:** Copy the metadata plugin files to your CKEditor's plugin folder:
+```
+ckeditor/plugins/
+```
+
+**Step 2:** Add the plugin to the CKEDITOR configuration:
+```js
+CKEDITOR.config.extraPlugins = 'iframeinsulator';
+```
+
+**Step 3:** Ensure that this plugin can create content:
+```js
+CKEDITOR.config.allowedContent = true;
+```
+
+**Step 4:** For best results, disable the default `iframe` plugin:
+```js
+CKEDITOR.config.removePlugins = 'iframe';
+```
 
 ## Usage
 
