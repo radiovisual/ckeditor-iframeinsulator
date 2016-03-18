@@ -5,6 +5,7 @@
 CKEDITOR.config.allowedContent = true;
 CKEDITOR.title = false;
 CKEDITOR.config.enterMode = 2;
+CKEDITOR.config.removePlugins = 'iframe,div,stylesheetparser';
 
 CKEDITOR.plugins.add('iframeinsulator', {
 	// Important: icon file must match the button name, in lowercase
@@ -47,13 +48,4 @@ CKEDITOR.plugins.add('iframeinsulator', {
 	}
 });
 
-// IMPORTANT!
-// Remember to add your new plugin to your ckeditor configuration with:
-// CKEDITOR.config.extraPlugins = 'iframeinsulator';
-
-// Because we are creating content, we also need:
-// CKEDITOR.config.allowedContent = true;
-
-// Lastly, make sure that the `iframe` plugin is disabled
-// CKEDITOR.config.removePlugins = 'iframe,div';
 
