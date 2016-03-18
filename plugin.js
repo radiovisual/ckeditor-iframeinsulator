@@ -1,9 +1,10 @@
 /* eslint-disable no-undef, new-cap  */
 
-// Force allowedContent on your CKEditor environment
-// This should be done in your own configuration file, but I am
-// trying it here to see if it helps fix a bug.
+// Force required settings on your CKEditor environment
+// This should normally be done in your own configuration file
 CKEDITOR.config.allowedContent = true;
+CKEDITOR.title = false;
+CKEDITOR.config.enterMode = 2;
 
 CKEDITOR.plugins.add('iframeinsulator', {
 	// Important: icon file must match the button name, in lowercase
