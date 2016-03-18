@@ -1,5 +1,10 @@
 /* eslint-disable no-undef, new-cap  */
 
+// Force allowedContent on your CKEditor environment
+// This should be done in your own configuration file, but I am
+// trying it here to see if it helps fix a bug.
+CKEDITOR.config.allowedContent = true;
+
 CKEDITOR.plugins.add('iframeinsulator', {
 	// Important: icon file must match the button name, in lowercase
 	icons: 'iframeinsulator',
@@ -43,10 +48,10 @@ CKEDITOR.plugins.add('iframeinsulator', {
 
 // IMPORTANT!
 // Remember to add your new plugin to your ckeditor configuration with:
-// config.extraPlugins = 'iframeinsulator';
+// CKEDITOR.config.extraPlugins = 'iframeinsulator';
 
 // Because we are creating content, we also need:
-// config.allowedContent = true;
+// CKEDITOR.config.allowedContent = true;
 
 // Lastly, make sure that the `iframe` plugin is disabled
 // CKEDITOR.config.removePlugins = 'iframe,div';
