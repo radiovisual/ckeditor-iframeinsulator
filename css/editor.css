@@ -2,4 +2,6 @@
     background-color: white;
     background-image: url('stripe.png');
     padding: 25px;
+    position: relative;
+    z-index: 100;
 }

@@ -7,9 +7,6 @@ CKEDITOR.title = false;
 CKEDITOR.config.enterMode = 2;
 CKEDITOR.config.removePlugins = 'iframe,div,stylesheetparser';
 
-// for troubleshooting
-console.log('CKEDITOR (iframeinsulator)', CKEDITOR);
-
 CKEDITOR.plugins.add('iframeinsulator', {
 	// Important: icon file must match the button name, in lowercase
 	icons: 'iframeinsulator',
