@@ -54,6 +54,11 @@ This plugin wraps your iframe embeds with a div that looks like this:
 No styles are attached to the `div.iframe-insulator` outside of the editor, so you are free to style it however you like,
 or ignore it all together. 
 
+## Related 
+
+- [ckeditor-metadata](https://github.com/radiovisual/ckeditor-metadata)
+- [ckeditor-audioinsulator](https://github.com/radiovisual/ckeditor-audioinsulator)
+
 ## License
 
 MIT @ [Michael Wuergler](http://numetriclabs.com)
