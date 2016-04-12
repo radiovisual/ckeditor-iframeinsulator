@@ -1,6 +1,6 @@
 {
   "name": "ckeditor-iframeinsulator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Insulate ckeditor iframes with a contextMenu-friendly div.",
   "main": "plugin.js",
   "scripts": {
