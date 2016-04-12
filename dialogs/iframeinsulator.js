@@ -16,6 +16,73 @@ CKEDITOR.dialog.add('iframeinsulatorDialog', function (editor) {
 		return o;
 	}
 
+	// For more details on this function check out:
+	// https://github.com/radiovisual/get-video-id
+	function getUrlFromEmbedCode(str) {
+		if (/<iframe/ig.test(str)) {
+			str = getSrcFromEmbedCode(str);
+		}
+
+		// remove the '-no-cookie' flag from youtube urls
+		str = str.replace('-nocookie', '');
+
+		function stripParameters(str) {
+			if (str.indexOf('?') > -1) {
+				return str.split('?')[0];
+			}
+			return str;
+		}
+
+		function getSrcFromEmbedCode(embedCodeString) {
+			var re = /src="(.*?)"/gm;
+			var url = re.exec(embedCodeString);
+
+			if (url && url.length >= 2) {
+				return url[1];
+			}
+		}
+
+		// shortcode
+		var shortcode = /youtube:\/\/|https?:\/\/youtu\.be\//g;
+
+		if (shortcode.test(str)) {
+			var shortcodeid = str.split(shortcode)[1];
+			return stripParameters(shortcodeid);
+		}
+
+		// /v/ or /vi/
+		var inlinev = /\/v\/|\/vi\//g;
+
+		if (inlinev.test(str)) {
+			var inlineid = str.split(inlinev)[1];
+			return stripParameters(inlineid);
+		}
+
+		// v= or vi=
+		var parameterv = /v=|vi=/g;
+
+		if (parameterv.test(str)) {
+			var arr = str.split(parameterv);
+			return arr[1].split('&')[0];
+		}
+
+		// embed
+		var embedreg = /\/embed\//g;
+
+		if (embedreg.test(str)) {
+			var embedid = str.split(embedreg)[1];
+			return stripParameters(embedid);
+		}
+
+		// user
+		var userreg = /\/user\//g;
+
+		if (userreg.test(str)) {
+			var elements = str.split('/');
+			return stripParameters(elements.pop());
+		}
+	}
+
 	return {
 		title: 'Embed Media',
 		minWidth: 400,
@@ -64,6 +131,9 @@ CKEDITOR.dialog.add('iframeinsulatorDialog', function (editor) {
 
 			// the iframe html from embedMarkup
 			var embedIframe = CKEDITOR.dom.element.createFromHtml(dialog.getValueOf('tab-basic', 'embedMarkup'));
+
+			// now make sure that the video-id is attached the embedded iframe
+			embedIframe.setAttribute('data-video-id', getUrlFromEmbedCode(dialog.getValueOf('tab-basic', 'embedMarkup')));
 
 			if (dialog.insertMode) {
 				element.setAttribute('class', 'iframe-insulator');
