@@ -51,6 +51,14 @@ This plugin wraps your iframe embeds with a div that looks like this:
 </div>
 ```
 
+This plugin adds a `data-video-id` attribute to the embedded iframe, which is the video id of the youtube video embed (see [get-video-id](https://github.com/radiovisual/get-video-id) for more information):
+
+```html
+<div class="iframe-insulator">
+    <iframe src='http://youtu.be/ABC123' data-video-id='ABC123'>...</iframe>
+</div>
+```
+
 No styles are attached to the `div.iframe-insulator` outside of the editor, so you are free to style it however you like,
 or ignore it all together. 
 
